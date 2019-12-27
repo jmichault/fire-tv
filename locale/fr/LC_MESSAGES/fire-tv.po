@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-12-26 23:04+0100\n"
+"PO-Revision-Date: 2019-12-26 21:14+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: firetv.py:19
+msgid "ERARO:   "
+msgstr "ERREUR : "
+
+#: firetv.py:21
+msgid "AVERTO: "
+msgstr "AVERTISSEMENT : "
+
+#: firetv.py:23
+msgid "RIMARKO:  "
+msgstr "REMARQUE : "
+
+#: firetv.py:25
+msgid "TRAFIKO: "
+msgstr "TRAFIC : "
+
+#: firetv.py:27
+msgid "ELPURIGO:   "
+msgstr "DÉBOGAGE : "
+
+#: firetv.py:52
+msgid "[inicializo]  "
+msgstr "[initialisation] "
+
+#: firetv.py:61
+msgid "[konekti] Rezulto: escepto"
+msgstr "[connexion] Résultat : exception"
+
+#: firetv.py:93
+msgid "[akiri potencŝtato] "
+msgstr "[lecture alimentation] "
+
+#: firetv.py:95
+msgid "[akiri potencŝtato] Rezulto: "
+msgstr "[lecture alimentation] Résultat : "
+
+#: firetv.py:98
+msgid "[akiri potencŝtato] Rezulto: escepto"
+msgstr "[lecture alimentation] Résultat : exception"
+
+#: firetv.py:105
+msgid "[apo]: "
+msgstr "[application] : "
+
+#: plugin.py:37 plugin.py:91
+msgid "Ŝaltita"
+msgstr "Démarrage"
+
+#: plugin.py:54
+msgid "Hejmo"
+msgstr "Accueil"
+
+#: plugin.py:61 plugin.py:64 plugin.py:144
+msgid "Statuso"
+msgstr "Statut"
+
+#: plugin.py:62 plugin.py:66
+msgid "Apo"
+msgstr "Application"
+
+#: plugin.py:82
+msgid "', nivelo: "
+msgstr "', niveau : "
+
+#: plugin.py:82
+msgid ": parametro '"
+msgstr ": paramètre '"
+
+#: plugin.py:82
+msgid "onCommand alvokita por unuo "
+msgstr "onCommand invoqué pour l 'unité "
+
+#: plugin.py:94
+msgid "Malŝaltita"
+msgstr "Arrêt"
+
+#: plugin.py:146
+msgid "adb ne konektita al fireTV ("
+msgstr "adb déconnecté du fireTV ("
+
+#: plugin.py:149
+msgid "fireTV apo: "
+msgstr "application fireTV : "
+
+#: plugin.py:151 plugin.py:154 plugin.py:157 plugin.py:160 plugin.py:163
+msgid ",en "
+msgstr ", dans "
+
+#: plugin.py:166
+msgid ",en Hejmo"
+msgstr ", dans l'accueil"
+
+#: plugin.py:169
+msgid "adb(2) ne konektita al fireTV ("
+msgstr "adb(2) déconnecté du fireTV ("
+
+#: plugin.py:172
+msgid "fireTV aktiva"
+msgstr "fireTV actif"
+
+#: plugin.py:174
+msgid "Statuso fireTV: "
+msgstr "Statut fireTV : "
+
+#: plugin.py:198
+msgid "ĝisdatigo "
+msgstr "mise à jour "
+
+#: plugin.py:208
+msgid "Aparato:             "
+msgstr "Périphérique :        "
+
+#: plugin.py:209
+msgid "Interna ID:         '"
+msgstr "ID interne :        '"
+
+#: plugin.py:210
+msgid "Ekstera ID:         '"
+msgstr "ID externe :      '"
+
+#: plugin.py:211
+msgid "Aparato Nomo:       '"
+msgstr "Nom du périphérique : '"
+
+#: plugin.py:212
+msgid "Aparato nValoro:     "
+msgstr "Périphérique, nValeur : "
+
+#: plugin.py:213
+msgid "Aparato sValoro:    '"
+msgstr "Périphérique, sValeur : '"
+
+#: plugin.py:214
+msgid "Aparato LastaNivelo: "
+msgstr "Périphérique, dernier niveau : "

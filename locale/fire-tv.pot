@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-12-26 23:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: firetv.py:19
+msgid "ERARO:   "
+msgstr ""
+
+#: firetv.py:21
+msgid "AVERTO: "
+msgstr ""
+
+#: firetv.py:23
+msgid "RIMARKO:  "
+msgstr ""
+
+#: firetv.py:25
+msgid "TRAFIKO: "
+msgstr ""
+
+#: firetv.py:27
+msgid "ELPURIGO:   "
+msgstr ""
+
+#: firetv.py:52
+msgid "[inicializo]  "
+msgstr ""
+
+#: firetv.py:61
+msgid "[konekti] Rezulto: escepto"
+msgstr ""
+
+#: firetv.py:93
+msgid "[akiri potencŝtato] "
+msgstr ""
+
+#: firetv.py:95
+msgid "[akiri potencŝtato] Rezulto: "
+msgstr ""
+
+#: firetv.py:98
+msgid "[akiri potencŝtato] Rezulto: escepto"
+msgstr ""
+
+#: firetv.py:105
+msgid "[apo]: "
+msgstr ""
+
+#: plugin.py:37 plugin.py:91
+msgid "Ŝaltita"
+msgstr ""
+
+#: plugin.py:54
+msgid "Hejmo"
+msgstr ""
+
+#: plugin.py:61 plugin.py:64 plugin.py:144
+msgid "Statuso"
+msgstr ""
+
+#: plugin.py:62 plugin.py:66
+msgid "Apo"
+msgstr ""
+
+#: plugin.py:82
+msgid "', nivelo: "
+msgstr ""
+
+#: plugin.py:82
+msgid ": parametro '"
+msgstr ""
+
+#: plugin.py:82
+msgid "onCommand alvokita por unuo "
+msgstr ""
+
+#: plugin.py:94
+msgid "Malŝaltita"
+msgstr ""
+
+#: plugin.py:146
+msgid "adb ne konektita al fireTV ("
+msgstr ""
+
+#: plugin.py:149
+msgid "fireTV apo: "
+msgstr ""
+
+#: plugin.py:151 plugin.py:154 plugin.py:157 plugin.py:160 plugin.py:163
+msgid ",en "
+msgstr ""
+
+#: plugin.py:166
+msgid ",en Hejmo"
+msgstr ""
+
+#: plugin.py:169
+msgid "adb(2) ne konektita al fireTV ("
+msgstr ""
+
+#: plugin.py:172
+msgid "fireTV aktiva"
+msgstr ""
+
+#: plugin.py:174
+msgid "Statuso fireTV: "
+msgstr ""
+
+#: plugin.py:198
+msgid "ĝisdatigo "
+msgstr ""
+
+#: plugin.py:208
+msgid "Aparato:             "
+msgstr ""
+
+#: plugin.py:209
+msgid "Interna ID:         '"
+msgstr ""
+
+#: plugin.py:210
+msgid "Ekstera ID:         '"
+msgstr ""
+
+#: plugin.py:211
+msgid "Aparato Nomo:       '"
+msgstr ""
+
+#: plugin.py:212
+msgid "Aparato nValoro:     "
+msgstr ""
+
+#: plugin.py:213
+msgid "Aparato sValoro:    '"
+msgstr ""
+
+#: plugin.py:214
+msgid "Aparato LastaNivelo: "
+msgstr ""
+
