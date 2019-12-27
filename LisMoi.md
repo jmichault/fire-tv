@@ -69,17 +69,12 @@ cd ~/domoticz/plugins
 git clone https://github.com/jmichault/fire-tv
 ```
 ### dans domoticz :
-aller dans Réglages, Matériel.
-
-dans type, sélectionner «Amazon Fire TV (with Kodi remote)»
-
-renseigner le nom.
-
-renseigner l'adresse IP.
-
-si vous n'avez pas de barre de son ou de home cinéma, mettre 0 dans le «CEC ID for sound». (Note : pas testé).
-
-cliquer «Ajouter».
+aller dans Réglages, Matériel.\
+dans type, sélectionner «Amazon Fire TV (with Kodi remote)»\
+renseigner le nom.\
+renseigner l'adresse IP.\
+si vous n'avez pas de barre de son ou de home cinéma, mettre 0 dans le «CEC ID for sound». (Note : pas testé).\
+cliquer «Ajouter».\
 
 Vous devriez maintenant avoir deux nouveaux périphériques dans l'onglet «Interrupteurs» :
 - le premier (statut) permet d'une part d'allumer/éteindre fireTV, télé et barre de son, d'autre part de simuler la télécommande.
