@@ -58,6 +58,7 @@ echo "scan" | cec-client -s -d 1
 
 ## exemple d'installation du plugin :
 ### sur le raspberry :
+pip install adb-shell
 cd ~/domoticz/plugins
 git clone https://github.com/jmichault/fire-tv
 ### dans domoticz :

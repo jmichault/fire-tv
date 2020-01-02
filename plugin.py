@@ -4,7 +4,7 @@
 #       Fire TV Plugin
 #       
 """
-<plugin key="fire-tv" name="Amazon Fire TV (with Kodi remote)" author="jmichault" version="0.1" wikilink="https://github.com/jmichault/fire-tv" externallink="https://www.amazon.com/firetv">
+<plugin key="fire-tv" name="Amazon Fire TV (with Kodi remote)" author="jmichault" version="0.2" wikilink="https://github.com/jmichault/fire-tv" externallink="https://www.amazon.com/firetv">
  <description>
  </description>
   <params>
@@ -144,7 +144,12 @@ class BasePlugin:
             Domoticz.Debug(_("Statuso")+" fireTV: " + str(tvStatus))
         except Exception as err:
             Domoticz.Log(_("adb ne konektita al fireTV (") +  str(err) + ")")
-        try:
+        if tvStatus == 'active':                        # TV is on
+          Domoticz.Debug(" fireTV: dans active ")
+          self.powerOn = True
+          UpdateDevice(1, 1, _('fireTV aktiva')+fireApp)
+          try:
+            Domoticz.Debug(" fireTV: dans active,try ")
             longFireApp = _tv.legi_apo_aktualan()
             Domoticz.Debug(_("fireTV apo: ") + longFireApp)
             if longFireApp.find("netflix")>0:
@@ -165,17 +170,14 @@ class BasePlugin:
             elif longFireApp.find("com.amazon.tv.launcher")>0:
                 fireApp = _(",en Hejmo");
                 UpdateDevice(2, 1, "10")
-        except Exception as err:
+          except Exception as err:
             Domoticz.Log(_("adb(2) ne konektita al fireTV (") +  str(err) + ")")
-        if tvStatus == 'active':                        # TV is on
-            self.powerOn = True
-            UpdateDevice(1, 1, _('fireTV aktiva')+fireApp)
         elif tvStatus == None:                        # TV is unknown
-            Domoticz.Debug(_("Statuso fireTV: ") + str(tvStatus))
+          Domoticz.Debug(_("Statuso fireTV: ") + str(tvStatus))
         else:                                           # TV is off or standby
-            self.powerOn = False
-            UpdateDevice(1, 0, 'off')
-            UpdateDevice(2, 0, "0")
+          self.powerOn = False
+          UpdateDevice(1, 0, 'off')
+          UpdateDevice(2, 0, 'off')
         return
 
 _plugin = BasePlugin()

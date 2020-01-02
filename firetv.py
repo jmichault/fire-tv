@@ -13,6 +13,7 @@ from adb_shell.auth.sign_pythonrsa import PythonRSASigner
 import logging
 
 import cec
+import datetime
 
 def LogCallback(level, time, message):
     if level == cec.CEC_LOG_ERROR:
@@ -38,8 +39,6 @@ class FiretvRC:
         self._cecid_sound = cecid_sound
         self._cecid_fire = cecid_fire
         self._device = None
-        self._device = AdbDevice(serial=host+':5555');
-        self._device.close();
         cecconfig = cec.libcec_configuration()
         cecconfig.strDeviceName = "libCEC"
         cecconfig.bActivateSource = 0
@@ -49,16 +48,15 @@ class FiretvRC:
         self.cecadapt = cec.ICECAdapter.Create(cecconfig)
         self.adapter = self.cecadapt.DetectAdapters()[0].strComName
         self.cecadapt.Open(self.adapter)
+        self.konekti()
         Domoticz.Debug(_("[inicializo]  " ));
 
 # konekti kun ADB
     def konekti(self):
+        self._date_konekti = datetime.datetime.now()
         with open('/home/pi/.android/adbkey') as f:
             priv = f.read();
-        try:
-            self._device.close();
-        except:
-            Domoticz.Debug(_("[konekti] Rezulto: escepto" ));
+        self._device = AdbDevice(serial=self._host+':5555');
         self._signer = PythonRSASigner('', priv);
         self._device.connect(rsa_keys=[self._signer]);
 
@@ -67,9 +65,7 @@ class FiretvRC:
         self._device.close();
 # sendi klavo kun ADB
     def sendiKlavo(self,klavo):
-        self.konekti();
         self._device.shell("input keyevent "+ klavo);
-        #self.malkonekti();
 
 # sendi klavo kun CEC
     def sendiCecKlavo(self,dest,klavo):
@@ -89,22 +85,24 @@ class FiretvRC:
         #    return_value = "active"
         #else:
         #    return_value = "off"
+        if datetime.datetime.now() > self._date_konekti + datetime.timedelta(seconds=7200):
+          Domoticz.Log("FireTV "+ _("ADB konekto"))
+          self.malkonekti();
+          self.konekti();
         try:
             Domoticz.Debug(_("[akiri potencŝtato] " ));
             return_value = self._device.shell("dumpsys power | grep 'Display Power' | grep -q 'state=ON' && echo -e 'active\c' || echo -e 'off\c' ");
             Domoticz.Debug(_("[akiri potencŝtato] Rezulto: " ));
         except:
+            self.malkonekti();
             self.konekti();
             Domoticz.Debug(_("[akiri potencŝtato] Rezulto: escepto" ));
-        #self.malkonekti();
         return return_value
 
     def apo(self,programaro):
-        self.konekti();
         command = "monkey -p "+programaro+" 1";
         Domoticz.Debug(_("[apo]: ")+command );
         line = self._device.shell(command);
-        #self.malkonekti();
 
     def klavo_sxalti(self):
         ret = self.cecadapt.PowerOnDevices(self._cecid_sound)
@@ -210,9 +208,7 @@ class FiretvRC:
         self.sendiCecKlavo(self._cecid_sound,0x43);
 
     def legi_apo_aktualan(self):
-        self.konekti();
         line = self._device.shell("dumpsys window windows | grep mCurrentFocus");
-        #self.malkonekti();
         return line;
         #self.applis_encours=[line.strip().rsplit(' ', 1)[-1] for line in ps.splitlines() if line.strip()]
         
