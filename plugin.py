@@ -40,15 +40,17 @@ from firetv import FiretvRC
 
 class BasePlugin:
     _tv = None
+    _Address = None
     
     def onStart(self):
         global _tv
+        global _Address
         
         if Parameters["Mode6"] == "Debug":
             Domoticz.Debugging(1)
             DumpConfigToLog()
-        
-        _tv = FiretvRC(Parameters["Address"] ,int(Parameters["Mode3"]) ,int(Parameters["Mode4"]) )
+        _Address = Parameters["Address"]
+        _tv = FiretvRC( _Address ,int(Parameters["Mode3"]) ,int(Parameters["Mode4"]) )
 
         self.SourceOptions2 =   {   "LevelActions"  : "||||||",
                                     "LevelNames"    : "Off|"+_("Hejmo")+"|Netflix|Molotov|Kodi|Spotify",
@@ -144,6 +146,8 @@ class BasePlugin:
             Domoticz.Debug(_("Statuso")+" fireTV: " + str(tvStatus))
         except Exception as err:
             Domoticz.Log(_("adb ne konektita al fireTV (") +  str(err) + ")")
+            del self._tv
+            self._tv = FiretvRC( _Address , 5 , 11)
         if tvStatus == 'active':                        # TV is on
           Domoticz.Debug(" fireTV: dans active ")
           self.powerOn = True
